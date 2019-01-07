@@ -1,0 +1,31 @@
+<table #tableRef>
+  <tr *ngFor="let item of tableData; let i = index">
+    <td *ngFor="let col of item; let col_id = index" >
+      <div [contextMenu]="basicMenu" [contextMenuSubject]="[{row:i},{col: col_id} ]">
+        <input type="text" class="text-input">
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+<context-menu>
+  <ng-template contextMenuItem (execute)="addRow('row', 0)">
+    Add Row on Top
+  </ng-template>
+  <ng-template contextMenuItem (execute)="addRow('row', tableData.length)">
+    Add Row at last
+  </ng-template>
+  <ng-template contextMenuItem (execute)="addRow('row', $event.item[0]['row'])">
+    Add Row Above
+  </ng-template>
+  <ng-template contextMenuItem (execute)="addRow('row', $event.item[0]['row']+1)">
+    Add Row Below
+  </ng-template>
+  <ng-template contextMenuItem (execute)="addColumn('col', $event.item[1]['col'])">
+    Add Column Before
+  </ng-template>
+  <ng-template contextMenuItem (execute)="addColumn('col', $event.item[1]['col']+1)">
+    Add Column After
+  </ng-template>
+</context-menu>

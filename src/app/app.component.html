@@ -1,0 +1,21 @@
+
+<div class="heading">
+  <h3> Table 1 - with search option</h3>
+  <app-table-search></app-table-search>
+</div>
+
+<div class="heading">
+  <h3>Text Editor</h3>
+  <div class="form-group">
+      <ejs-richtexteditor #fromRTE
+                          [(value)]='value' required
+                          name="name"
+                          [(ngModel)]="value">
+      </ejs-richtexteditor>
+  </div>
+</div>
+
+<div class="heading">
+  <h3>Dynamic table (resizable with Add-row, column functionality )</h3>
+  <app-custom-table></app-custom-table>
+</div>

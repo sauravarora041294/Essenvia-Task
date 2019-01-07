@@ -1,0 +1,10 @@
+<section class="filter-wrapper">
+  <div class="keyword-wrapper">
+    <input type="text" [formControl]="searchField" value="{{search_value}}" id="keyword" autofocus/>
+  </div>
+  <ul class="filter-select">
+    <li *ngFor="let result of results | slice:0:5" class="filter-select-list">
+      <p class="artist-name" (click)="onSelectValue(result)">{{result}}</p>
+    </li>
+  </ul>
+</section>
