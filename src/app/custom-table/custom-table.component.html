@@ -28,4 +28,10 @@
   <ng-template contextMenuItem (execute)="addColumn('col', $event.item[1]['col']+1)">
     Add Column After
   </ng-template>
+  <ng-template contextMenuItem (execute)="delRow('row', $event.item[0]['row'])">
+    Delete this Row
+  </ng-template>
+  <ng-template contextMenuItem (execute)="delColumn('col', $event.item[1]['col'])">
+    Delete this Column
+  </ng-template>
 </context-menu>

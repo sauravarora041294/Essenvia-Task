@@ -46,7 +46,16 @@ export class CustomTableComponent {
         const mid = this.tableData[i].splice(flag, 0, '...');
       }
     }
-
   }
 
+  public delRow(val, flag): void {
+    this.tableData.splice(flag, 1);
+  }
+
+  public delColumn(val, flag): void {
+    let row_len = this.tableData.length;
+    for( let i=0; i<row_len; i++) {
+      this.tableData[i].splice(flag, 1);
+    }
+  }
 }
