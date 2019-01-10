@@ -2,17 +2,17 @@
   <tr>
     <td>
       <div class="input-div">
-        <app-search (selectText)="getValue($event)"></app-search>
+        <app-search [data]="searchResult" [selfValue]="selfValue" (selectText)="getValue($event)"></app-search>
       </div>
     </td>
-    <td>
+<!--    <td>
       <div class="input-div">
         <p>{{searchValue}}</p>
       </div>
-    </td>
+    </td>-->
     <td>
       <div class="input-div">
-        <p>{{searchValue}}</p>
+        <app-search-result [data]="searchValue" [selfResult]="selfResult" (selectText)="getResult($event)"></app-search-result>
       </div>
     </td>
   </tr>

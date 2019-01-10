@@ -6,16 +6,16 @@ import {switchMap} from 'rxjs/internal/operators';
 import {SearchService} from '../../service/search.service';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
+  selector: 'app-search-result',
+  templateUrl: './search-result.component.html',
+  styleUrls: ['./search-result.component.scss'],
 })
 
-export class SearchComponent implements OnInit {
+export class SearchResultComponent implements OnInit {
   results: any[] = [];
   @Output() selectText = new EventEmitter<string>();
-  @Input() data: string = ''
-  @Input() selfValue = '';
+  @Input() data: string = '';
+  @Input() selfResult = '';
   searchField: FormControl = new FormControl();
   search_value = '';
 
